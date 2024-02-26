@@ -55,7 +55,7 @@ public class Main {
         int studentId = scanner.nextInt();
         scanner.nextLine();
     
-        Student newStudent = new Student(studentId, name, nationality, age, highestEducation, idOrForeignPass, address);
+        Student newStudent = new Student(studentId, name, nationality, age, idOrForeignPass, address);
         studentList.add(newStudent);
         System.out.println("New student added!");
     } 
@@ -68,7 +68,6 @@ public class Main {
             System.out.println("Name: " + student.getName());
             System.out.println("Nationality: " + student.getNationality());
             System.out.println("Age: " + student.getAge());
-            System.out.println("Highest Education: " + student.getHighestEducation());
             System.out.println("IdOrForeignPass: " + student.getIdOrForeignPass());
             System.out.println("Address: " + student.getAddress());
             System.out.println("");

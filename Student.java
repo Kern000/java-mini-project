@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Student {
     
@@ -6,10 +8,33 @@ public class Student {
     private String name;
     private String nationality;
     private int age;
-    private String highestEducation;
     private int idOrForeignPass;
     private String address;
-    
+
+    public Student(){
+        studentId =0;        
+        name ="";
+        nationality = "";
+        age = 0;
+        idOrForeignPass = 0;
+        address="";
+    }
+
+    public Student( int studentId,
+                    String name,
+                    String nationality,
+                    int age,
+                    int idOrForeignPass,
+                    String address                   
+                    ){
+        setStudentId(studentId);
+        setName(name);
+        setNationality(nationality);
+        setAge(age);
+        setIdOrForeignPass(idOrForeignPass);
+        setAddress(address);
+    }
+
     public int getStudentId(){
         return studentId;
     }
@@ -49,16 +74,6 @@ public class Student {
             throw new IllegalArgumentException("Invalid age, pls set a non-zero int");
         }
     }
-    public String getHighestEducation(){
-        return highestEducation;
-    }
-    public void setHighestEducation(String highestEducation) throws IllegalArgumentException {
-        if (highestEducation != null && !highestEducation.isEmpty()){
-            this.highestEducation = highestEducation;
-        } else {
-            throw new IllegalArgumentException("Invalid highest education, set non-empty string");
-        }
-    }
     public int getIdOrForeignPass(){
         return idOrForeignPass;
     }
@@ -82,32 +97,6 @@ public class Student {
         }
     }
 
-    public Student(){
-        studentId =0;        
-        name ="";
-        nationality = "";
-        age = 0;
-        highestEducation = "";
-        idOrForeignPass = 0;
-        address="";
-    }
-
-    public Student( int studentId,
-                    String name,
-                    String nationality,
-                    int age,
-                    String highestEducation,
-                    int idOrForeignPass,
-                    String address                   
-                    ){
-        setStudentId(studentId);
-        setName(name);
-        setNationality(nationality);
-        setAge(age);
-        setHighestEducation(highestEducation);
-        setIdOrForeignPass(idOrForeignPass);
-        setAddress(address);
-    }
 
 
 
