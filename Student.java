@@ -1,8 +1,6 @@
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
-public class Student {
+public abstract class Student implements CompanyTaxReturns {
     
     private int studentId;
     private String name;
@@ -34,6 +32,13 @@ public class Student {
         setIdOrForeignPass(idOrForeignPass);
         setAddress(address);
     }
+
+    protected double calculateStudentRebate(double courseFeesPaid, double rebateRateForStudent){
+        double rebateRate = rebateRateForStudent;
+        return courseFeesPaid * rebateRate;
+    }
+
+    public abstract double calculateSalesTax();
 
     public int getStudentId(){
         return studentId;
@@ -97,7 +102,41 @@ public class Student {
         }
     }
 
+    public void displayStudentDetails(){
+        System.out.println("Student Id: " + getStudentId());
+        System.out.println("Name: " + getName());
+        System.out.println("Nationality: " + getNationality());
+        System.out.println("Age: " + getAge());
+        System.out.println("IdOrForeignPass: " + getIdOrForeignPass());
+        System.out.println("Address: " + getAddress());
+    }
 
+    public void editDetails(){
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Enter new Name: ");
+        String newName = scanner.nextLine();
+        this.setName(newName);
+
+        System.out.println("Enter new nationality: ");
+        String newNationality = scanner.nextLine();
+        this.setNationality(newNationality);
+
+        System.out.println("Enter new age: ");
+        int newAge = scanner.nextInt();
+        scanner.nextLine();
+        this.setAge(newAge);
+
+        System.out.println("Enter new IdOrForeignPass: ");
+        int newIdOrForeignPass = scanner.nextInt();
+        scanner.nextLine();
+        this.setIdOrForeignPass(newIdOrForeignPass);
+
+        System.out.println("Enter new address: ");
+        String newAddress = scanner.nextLine();
+        this.setAddress(newAddress);
+
+    }
 
 
 
