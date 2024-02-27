@@ -259,6 +259,8 @@ public class Main {
             } else if (choice == 6){
                 displayClassPasses();
             } else if (choice == 7){
+                displayAllTaxedPrograms();   
+            } else if (choice == 8){
                 break;
             }
         } while (true);
